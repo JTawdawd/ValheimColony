@@ -13,7 +13,7 @@ namespace JotunnModStub
     internal class ValheimColony : BaseUnityPlugin
     {
         public const string PluginGUID = "com.jotunn.ValheimColony";
-        public const string PluginName = "ValheimColony";
+        public const string PluginName = "ValheimColony"; 
         public const string PluginVersion = "0.0.1";
         private readonly Harmony harmony = new Harmony("ValheimColony");
 
@@ -40,8 +40,8 @@ namespace JotunnModStub
             LoadAssets();
 
             //Load new give command for new honey
-            CommandManager.Instance.AddConsoleCommand(new NewItemCommand());
-            CommandManager.Instance.AddConsoleCommand(new ResetHungerCommand());
+            CommandManager.Instance.AddConsoleCommand(new Commands.CustomCommand.Give());
+            CommandManager.Instance.AddConsoleCommand(new Commands.ResetHunger());
 
             // To learn more about Jotunn's features, go to
             // https://valheim-modding.github.io/Jotunn/tutorials/overview.html
@@ -80,50 +80,6 @@ namespace JotunnModStub
         void OnDestroy()
         {
             harmony.UnpatchSelf();
-        }
-
-        //creates a new command to give new honey 
-        public class NewItemCommand : ConsoleCommand
-        {
-            public override string Name => "give";
-
-            public override string Help => "Gives you custom items";
-
-            public override void Run(string[] args)
-            {
-                //if there is nothing typed after give 
-                if (args.Length == 0)
-                    return;
-
-                //Attempts to get the item from item manager
-                GameObject prefab = ItemManager.Instance.GetItem(args[0]).ItemPrefab;
-                if(prefab == null)
-                {
-                    Console.instance.Print($"{args[0]} is not an item");
-                    return;
-                }
-
-                //checks if there should be more than 1 given and gives that amount
-                int count = args.Length < 2 ? 1 : int.Parse(args[1]);
-                for(int i = 0; i < count; i++)
-                {
-                    Instantiate(prefab, Player.m_localPlayer.transform.position, Quaternion.identity);
-                }
-            }
-        }
-
-        //creating a commmand to clear hunger to test new foods
-        public class ResetHungerCommand : ConsoleCommand
-        {
-            public override string Name => "ResetHunger";
-
-            public override string Help => "Clears hunger";
-
-            public override void Run(string[] args)
-            {
-                Console.instance.Print("Hunger cleared");
-                Player.m_localPlayer.ClearFood();
-            }
         }
 
         //Patch for bed to allow daytime sleeping in any bed and spawn some sweet sweet honey
