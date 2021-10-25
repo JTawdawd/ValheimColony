@@ -41,6 +41,7 @@ namespace JotunnModStub
 
             //Load new give command for new honey
             CommandManager.Instance.AddConsoleCommand(new NewItemCommand());
+            CommandManager.Instance.AddConsoleCommand(new ResetHungerCommand());
 
             // To learn more about Jotunn's features, go to
             // https://valheim-modding.github.io/Jotunn/tutorials/overview.html
@@ -65,7 +66,7 @@ namespace JotunnModStub
             newhoneyPrefab = testBundle.LoadAsset<GameObject>("newHoney");
 
             //Makes the item into a custom item with some details
-            newhoney = new CustomItem(newhoneyPrefab, fixReference: false, new Jotunn.Configs.ItemConfig
+            newhoney = new CustomItem(newhoneyPrefab, fixReference: true, new Jotunn.Configs.ItemConfig
             {
                 Amount =1,
                 Name = "New Honey",
@@ -108,6 +109,20 @@ namespace JotunnModStub
                 {
                     Instantiate(prefab, Player.m_localPlayer.transform.position, Quaternion.identity);
                 }
+            }
+        }
+
+        //creating a commmand to clear hunger to test new foods
+        public class ResetHungerCommand : ConsoleCommand
+        {
+            public override string Name => "ResetHunger";
+
+            public override string Help => "Clears hunger";
+
+            public override void Run(string[] args)
+            {
+                Console.instance.Print("Hunger cleared");
+                Player.m_localPlayer.ClearFood();
             }
         }
 
