@@ -84,7 +84,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <EmbeddedResource Include="Properties\newhoney" />
+    <EmbeddedResource Include="Resources\newhoney" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
