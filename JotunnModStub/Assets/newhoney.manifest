@@ -1,0 +1,51 @@
+ManifestFileVersion: 0
+CRC: 2054472356
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 05ec678fe9932faa2dfc08a5a83493f9
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: e742ae3fbb7582404454aa4833cb6879
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3f42c530137bd72419d797d8d356c8fc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 61ee99d20200eff4c91f736bcab4fc17, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 415f4dc70fcf77349b7d622ba1ed51c6, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 205
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/PrefabInstance/Honey 1.prefab
+Dependencies: []
