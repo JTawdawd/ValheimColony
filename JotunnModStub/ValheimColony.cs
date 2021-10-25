@@ -36,7 +36,11 @@ namespace JotunnModStub
 
             harmony.PatchAll();
 
+            //Loads new items
             LoadAssets();
+
+            //Load new give command for new honey
+            CommandManager.Instance.AddConsoleCommand(new NewItemCommand());
 
             // To learn more about Jotunn's features, go to
             // https://valheim-modding.github.io/Jotunn/tutorials/overview.html
@@ -54,10 +58,13 @@ namespace JotunnModStub
             Jotunn.Logger.LogInfo("FejdStartup has awoken");
         }
 
+        //currently creates new honey item from a side load location
         void LoadAssets()
         {
             testBundle = AssetUtils.LoadAssetBundle("JotunnModStub/Assets/newhoney");
-            newhoneyPrefab = testBundle.LoadAsset<GameObject>("Honey 1");
+            newhoneyPrefab = testBundle.LoadAsset<GameObject>("newHoney");
+
+            //Makes the item into a custom item with some details
             newhoney = new CustomItem(newhoneyPrefab, fixReference: false, new Jotunn.Configs.ItemConfig
             {
                 Amount =1,
@@ -65,6 +72,7 @@ namespace JotunnModStub
                 Description = "Jordan Stinks"
             });
 
+            //Adds item to item manager
             ItemManager.Instance.AddItem(newhoney);
         }
 
@@ -73,13 +81,44 @@ namespace JotunnModStub
             harmony.UnpatchSelf();
         }
 
+        //creates a new command to give new honey 
+        public class NewItemCommand : ConsoleCommand
+        {
+            public override string Name => "give";
+
+            public override string Help => "Gives you custom items";
+
+            public override void Run(string[] args)
+            {
+                //if there is nothing typed after give 
+                if (args.Length == 0)
+                    return;
+
+                //Attempts to get the item from item manager
+                GameObject prefab = ItemManager.Instance.GetItem(args[0]).ItemPrefab;
+                if(prefab == null)
+                {
+                    Console.instance.Print($"{args[0]} is not an item");
+                    return;
+                }
+
+                //checks if there should be more than 1 given and gives that amount
+                int count = args.Length < 2 ? 1 : int.Parse(args[1]);
+                for(int i = 0; i < count; i++)
+                {
+                    Instantiate(prefab, Player.m_localPlayer.transform.position, Quaternion.identity);
+                }
+            }
+        }
+
+        //Patch for bed to allow daytime sleeping in any bed and spawn some sweet sweet honey
         [HarmonyPatch(typeof(Bed), nameof(Bed.Interact))]
         class Sleep_Patch
         {
             static bool Prefix(Humanoid human, bool repeat, bool alt, Transform ___m_spawnPoint)
             {
                 human.AttachStart(___m_spawnPoint, null, hideWeapons: true, isBed: true, onShip: false, "attach_bed", new Vector3(0f, 0.5f, 0f));
-                Instantiate(ItemManager.Instance.GetItem("Honey 1").ItemPrefab, ___m_spawnPoint.position, Quaternion.identity);
+                Instantiate(ItemManager.Instance.GetItem("newHoney").ItemPrefab, ___m_spawnPoint.position, Quaternion.identity);
                 return false;
             }
         }

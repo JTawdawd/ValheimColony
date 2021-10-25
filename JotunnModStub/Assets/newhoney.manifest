@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2054472356
+CRC: 1095712821
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 05ec678fe9932faa2dfc08a5a83493f9
+    Hash: 2d3ee17496ab9732b11e348e17430475
   TypeTreeHash:
     serializedVersion: 2
     Hash: e742ae3fbb7582404454aa4833cb6879
@@ -47,5 +47,5 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/PrefabInstance/Honey 1.prefab
+- Assets/PrefabInstance/newHoney.prefab
 Dependencies: []
