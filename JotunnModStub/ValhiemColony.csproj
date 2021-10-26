@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="Commands\Give.cs" />
     <Compile Include="Commands\ResetHunger.cs" />
+    <Compile Include="Kitbashes\FishBarrell.cs" />
     <Compile Include="Properties\IgnoreAccessModifiers.cs" />
     <Compile Include="ValheimColony.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -4,6 +4,8 @@ using Jotunn.Managers;
 using UnityEngine;
 using HarmonyLib;
 using Jotunn.Utils;
+using Jotunn.Configs;
+using System.Collections.Generic;
 
 namespace JotunnModStub
 {
@@ -38,6 +40,9 @@ namespace JotunnModStub
 
             //Loads new items
             LoadAssets();
+
+            //Load kitbash
+            LoadKitBash();
 
             //Load new give command for new honey
             CommandManager.Instance.AddConsoleCommand(new Commands.CustomCommand.Give());
@@ -92,6 +97,13 @@ namespace JotunnModStub
                 Instantiate(ItemManager.Instance.GetItem("newHoney").ItemPrefab, ___m_spawnPoint.position, Quaternion.identity);
                 return false;
             }
+        }
+
+        //Kitbashing 
+        void LoadKitBash()
+        {
+            Kitbashes.FishBarrell fishBarrell = new Kitbashes.FishBarrell();
+            fishBarrell.Load();
         }
     }
 }
