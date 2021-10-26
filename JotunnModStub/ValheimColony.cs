@@ -21,6 +21,10 @@ namespace JotunnModStub
         GameObject newhoneyPrefab;
         CustomItem newhoney;
 
+        AssetBundle colonistBundle;
+        GameObject colonistPrefab;
+        CustomItem colonist;
+
         // Use this class to add your own localization to the game
         // https://valheim-modding.github.io/Jotunn/tutorials/localization.html
         public static CustomLocalization Localization = LocalizationManager.Instance.GetLocalization();
@@ -40,8 +44,9 @@ namespace JotunnModStub
             LoadAssets();
 
             //Load new give command for new honey
-            CommandManager.Instance.AddConsoleCommand(new Commands.CustomCommand.Give());
+            CommandManager.Instance.AddConsoleCommand(new Commands.GiveClass.Give());
             CommandManager.Instance.AddConsoleCommand(new Commands.ResetHunger());
+            CommandManager.Instance.AddConsoleCommand(new Commands.PlaceClass.Place());
 
             // To learn more about Jotunn's features, go to
             // https://valheim-modding.github.io/Jotunn/tutorials/overview.html
@@ -65,6 +70,9 @@ namespace JotunnModStub
             testBundle = AssetUtils.LoadAssetBundle("JotunnModStub/Assets/newhoney");
             newhoneyPrefab = testBundle.LoadAsset<GameObject>("newHoney");
 
+            colonistBundle = AssetUtils.LoadAssetBundle("JotunnModStub/Assets/colonist");
+            colonistPrefab = colonistBundle.LoadAsset<GameObject>("Colonist");
+
             //Makes the item into a custom item with some details
             newhoney = new CustomItem(newhoneyPrefab, fixReference: true, new Jotunn.Configs.ItemConfig
             {
@@ -75,6 +83,7 @@ namespace JotunnModStub
 
             //Adds item to item manager
             ItemManager.Instance.AddItem(newhoney);
+            PrefabManager.Instance.AddPrefab(colonistPrefab);
         }
 
         void OnDestroy()

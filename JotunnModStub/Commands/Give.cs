@@ -7,7 +7,7 @@ using Jotunn.Utils;
 
 namespace JotunnModStub.Commands
 {
-    internal class CustomCommand : BaseUnityPlugin {
+    internal class GiveClass : BaseUnityPlugin {
         //creates a new command to give
         public class Give : ConsoleCommand
         {
@@ -34,7 +34,6 @@ namespace JotunnModStub.Commands
                 for (int i = 0; i < count; i++)
                 {
                     Instantiate(prefab, Player.m_localPlayer.transform.position, Quaternion.identity);
-
                 }
             }
         }

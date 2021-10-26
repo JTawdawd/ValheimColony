@@ -1,0 +1,93 @@
+ManifestFileVersion: 0
+CRC: 2456143227
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5cc2e79d19eeaf8fa5369e0bfc63184b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 99d2cb976e943d5b33e50cffafdca1ef
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3f42c530137bd72419d797d8d356c8fc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ca802ef0bc9bb8047a3c2614557a3df1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 61ee99d20200eff4c91f736bcab4fc17, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f1f20143f6a55384eb7d2f38a4ff132c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f7cd0bd333414db46b812520ffe48f35, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a7a2c435f5175004d8af116f5a6695a7, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8ea926c53d56027429a75f134b48ad69, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 045d760622ac0a6428f490947c789ec5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ca2ad4174c98616418ce37d350cc2ef6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e81d38b8eee514a468bd19730acd0517, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: aea7de7aafb5b88488553733d2d1d0ef, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2a3afd6b560803b4bb5cd85e3a12c9e4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 224c27cd91707cd4d819e04df6578624, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 409d4efe221214f47b67069353215a94, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: aa334c4f9c8dffd49826d247437af884, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 134
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 205
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/PrefabInstance/colonist.prefab
+Dependencies: []
